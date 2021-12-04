@@ -1,4 +1,17 @@
-package main
+package get
+
+import (
+	"database/sql"
+	"log"
+
+	"github.com/aws/aws-lambda-go/events"
+	_ "github.com/go-sql-driver/mysql"
+)
+
+type Task struct {
+	Id int
+	Content string
+}
 
 func SelectAll(db *sql.DB, request events.APIGatewayProxyRequest) {
 
